@@ -18,10 +18,13 @@ function gameSetup() {
 }
 
 function gameDraw(iteration) {
-    if(gen === 1) {
+    if(gen === 1 || steps > next_gen_paths[iteration].length) {
         direction = Math.floor(random(0,4)+1);
     }else {
         direction = next_gen_paths[iteration][steps];
+    }
+    if(direction === undefined) {
+        direction = Math.floor(random(0,4)+1);
     }
     playerMovement(iteration, direction);
 }

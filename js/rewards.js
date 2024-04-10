@@ -80,6 +80,11 @@ function findFittest() {
             }
         }
 
+        if(ranked[0] === max_steps) {
+            console.log("it trained to perfection");
+            remove();
+        }
+
         checkChunks = true;
     }
 }

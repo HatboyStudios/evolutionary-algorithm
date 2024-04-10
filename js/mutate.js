@@ -106,8 +106,8 @@ function mutationProcess() {
         for(mutation_balance; mutation_balance < 1; mutation_balance++) {
             for(let i = 0; i < next_gen_paths.length; i++) {
                 for(let j = 0; j < steps; j++) {
-                    let chaos = Math.floor(random(0,50)+1);
-                    if(chaos === 50) {
+                    let chaos = Math.floor(random(0,max_steps*10)+1);
+                    if(chaos === max_steps/10) {
                         next_gen_paths[i][j] = Math.floor(random(0,4)+1);
                         console.log("A Mutation has occured");
                     }
@@ -121,6 +121,7 @@ function mutationProcess() {
 
 function beginNextGen() {
     if(resetGame === true) {
+        console.log(ranked[0]);
         clear();
         allSprites.remove();
         setup();

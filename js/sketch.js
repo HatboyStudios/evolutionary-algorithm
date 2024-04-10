@@ -1,6 +1,6 @@
-var max_steps = 1000;
-var player_count = 10;
-var frames = 1;
+var player_count = 200;
+var frames = 5;
+var max_steps;
 
 var player;
 var steps;
@@ -24,6 +24,8 @@ var gen = 0;
 var next_gen_paths = [];
 
 function setup() {
+    max_steps = 100 + (gen*10);
+    console.log(max_steps);
     gen++;
     console.log(gen);
     let screen = createCanvas(400,400);
